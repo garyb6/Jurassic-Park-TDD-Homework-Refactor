@@ -10,4 +10,9 @@ Park.prototype.numberOfDinosaurs = function(){
 Park.prototype.addDinosaur = function (dinosaur){
     this.collection.push(dinosaur)
 }
+
+Park.prototype.removeDinosaur = function (dinosaur){
+    const indexOfDinosaur = this.collection.indexOf(dinosaur)
+    this.collection.splice(indexOfDinosaur, 1)
+}
 module.exports = Park; 
