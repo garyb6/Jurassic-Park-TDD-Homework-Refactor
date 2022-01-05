@@ -1,3 +1,5 @@
 const Park = function(name){
-    this.name = "Jurassic Park"
+    this.name = name;
 }
+
+module.exports = Park; 
