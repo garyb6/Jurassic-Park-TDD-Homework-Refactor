@@ -2,6 +2,7 @@ const assert = require('assert');
 const Park = require('../models/park.js');
 const Dinosaur = require('../models/dinosaur.js');
 const exp = require('constants');
+const { Console } = require('console');
 
 describe('Park', function() {
 
@@ -36,7 +37,6 @@ describe('Park', function() {
     const expected = [dinosaur1];
     const actual = park.getDinosaurBySpecies('T-Rex');
     assert.deepStrictEqual(actual, expected)
-    console.log (actual)
   });
 
   it ('should count number of dinosaurs in collection', function(){
@@ -66,8 +66,10 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, expected)
   });
 
-  xit('should be able to calculate the total number of visitors per day', function(){
-
+  it('should be able to calculate the total number of visitors per day', function(){
+    const expected = 300
+    const actual = park.calculateVisitors(1)
+    assert.deepStrictEqual(actual, expected)
   });
 
   xit('should be able to calculate the total number of visitors per year', function(){

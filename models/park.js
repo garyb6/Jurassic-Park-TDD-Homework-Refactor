@@ -18,21 +18,21 @@ Park.prototype.addDinosaur = function (dinosaur){
 Park.prototype.removeDinosaur = function (dinosaur){
     this.collection.pop(dinosaur)
 }
+//make this better, currently can only remove last dino
 
 Park.prototype.getMostPopular = function(){
-    let bnog = this.collection.reduce((max, dinosaur) => max.guestsAttractedPerDay > dinosaur.guestsAttractedPerDay ? max : dinosaur);
-    return bnog 
+    return this.collection.reduce((max, dinosaur) => max.guestsAttractedPerDay > dinosaur.guestsAttractedPerDay ? max : dinosaur);
 }
-// let maxGame = games.reduce((max, game) => max.votes > game.votes ? max : game);
 
+Park.prototype.calculateVisitors = function(day){
+    return this.collection.reduce((total, dinosaur) => total + dinosaur.guestsAttractedPerDay * day, 0)
+}
 
 module.exports = Park; 
 
-// let max = -Infinity, argmax;
-// for( dinosaur of collection)
-//     if(dinosaur.guestsAttractedPerDay >= max)
-//     max = dinosaur.guestsAttractedPerDay, argmax = dinosaur;
-// argmax;
+// const array1 = [1, 2, 3, 4];
+// const reducer = (previousValue, currentValue) => previousValue + currentValue;
 
-    // const mostPopular = this.collection.reduce((max, dinosaur) => max.dinosaur.guestsAttractedPerDay > dinosaur.guestsAttractedPerDay ? max : dinosaur);
-    // return mostPopular
+// // 1 + 2 + 3 + 4
+// console.log(array1.reduce(reducer));
+// // expected output: 10
