@@ -72,8 +72,10 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, expected)
   });
 
-  xit('should be able to calculate the total number of visitors per year', function(){
-
+  it('should be able to calculate the total number of visitors per year', function(){
+    const expected = 109500
+    const actual = park.calculateVisitors(365)
+    assert.deepStrictEqual(actual, expected)
 
 
   });
