@@ -39,30 +39,30 @@ describe('Park', function() {
     console.log (actual)
   });
 
-  xit ('should count number of dinosaurs in collection', function(){
+  it ('should count number of dinosaurs in collection', function(){
     const actual = park.collection.length;
     const expected = 5
     assert.deepStrictEqual(actual, expected)
   });
 
 
-  xit('should be able to add a dinosaur to its collection', function(){
+  it('should be able to add a dinosaur to its collection', function(){
     park.addDinosaur(dinosaur1)
     park.addDinosaur(dinosaur2)
     const actual = park.numberOfDinosaurs();
     assert.deepStrictEqual(actual, 7)
   });
 
-  xit('should be able to remove a dinosaur from its collection', function(){
+  it('should be able to remove a dinosaur from its collection', function(){
     park.removeDinosaur(dinosaur5);
     const actual = park.collection;
     const expected = [dinosaur1, dinosaur2, dinosaur3, dinosaur4]
     assert.deepStrictEqual(actual, expected);
   });
 
-  xit('should be able to find the dinosaur that attracts the most guests', function(){
+  it('should be able to find the dinosaur that attracts the most guests', function(){
     const expected = dinosaur1;
-    const actual = park.getMostPopular;
+    const actual = park.getMostPopular();
     assert.deepStrictEqual(actual, expected)
   });
 

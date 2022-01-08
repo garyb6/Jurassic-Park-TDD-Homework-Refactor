@@ -19,12 +19,11 @@ Park.prototype.removeDinosaur = function (dinosaur){
     this.collection.pop(dinosaur)
 }
 
-
-
-// Park.prototype.mostPopular = function(){
-//     return this.collection.filter(dinosaur => dinosaur[guestsAttractedPerDay] )
-// }
-
+Park.prototype.getMostPopular = function(){
+    let bnog = this.collection.reduce((max, dinosaur) => max.guestsAttractedPerDay > dinosaur.guestsAttractedPerDay ? max : dinosaur);
+    return bnog 
+}
+// let maxGame = games.reduce((max, game) => max.votes > game.votes ? max : game);
 
 
 module.exports = Park; 
