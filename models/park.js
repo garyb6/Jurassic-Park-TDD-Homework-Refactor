@@ -1,7 +1,11 @@
-const Park = function(name, price){
+const Park = function(name, price, collection){
     this.name = name;
     this.price = price;
-    this.collection = []
+    this.collection = collection;
+}
+
+Park.prototype.getDinosaurBySpecies = function (species){
+    return this.collection.filter(dinosaur => dinosaur.species === species)
 }
 
 Park.prototype.numberOfDinosaurs = function(){
@@ -12,15 +16,15 @@ Park.prototype.addDinosaur = function (dinosaur){
 }
 
 Park.prototype.removeDinosaur = function (dinosaur){
-    const indexOfDinosaur = this.collection.indexOf(dinosaur)
-    this.collection.splice(indexOfDinosaur, 1)
+    this.collection.pop(dinosaur)
 }
 
-Park.prototype.mostGuests = function(){
-    var maxGuests = Math.max(...this.collection.map(e => e.dinosaur.guestsAttractedPerDay));
-    var dinosaur = this.collection.find(dinosaur => dinosaur.guestsAttractedPerDay === maxGuests);
-    return dinosaur
-}
+
+
+// Park.prototype.mostPopular = function(){
+//     return this.collection.filter(dinosaur => dinosaur[guestsAttractedPerDay] )
+// }
+
 
 
 module.exports = Park; 
