@@ -28,11 +28,8 @@ Park.prototype.calculateVisitors = function(day){
     return this.collection.reduce((total, dinosaur) => total + dinosaur.guestsAttractedPerDay * day, 0)
 }
 
+Park.prototype.calculateRevenue = function(day){
+    return this.calculateVisitors(day) * this.price 
+}
+
 module.exports = Park; 
-
-// const array1 = [1, 2, 3, 4];
-// const reducer = (previousValue, currentValue) => previousValue + currentValue;
-
-// // 1 + 2 + 3 + 4
-// console.log(array1.reduce(reducer));
-// // expected output: 10
